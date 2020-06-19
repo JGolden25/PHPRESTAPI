@@ -23,7 +23,7 @@ if ($url[4] != null) {
 }
 
 if (in_array($tableName, $tables)) {
-    // Include that api route
+    
     include_once './classes/Database.php';
     include_once './api/posts.php';
 } else {

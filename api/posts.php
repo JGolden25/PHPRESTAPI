@@ -2,7 +2,7 @@
 
 if ($method == 'GET') {
     if ($id) {
-        $data = DB::query("SELECT * FROM $tableName WHERE id=:id", array(':id' => $id));
+        $data = DB::query("SELECT * FROM `posts` WHERE id=:id", array(':id' => $id));
         if ($data != null) {
             echo json_encode($data[0]);
         } else {
@@ -21,7 +21,8 @@ if ($method == 'GET') {
     } else {
         echo json_encode(['message' => 'Please pill in all the credentials', 'success' => false]);
     }
-} elseif ($id) {
+} 
+elseif ($id) {
     $post = DB::query("SELECT * FROM $tableName WHERE id=:id", array(':id' => $id));
     if ($post != null) {
         if ($method == 'PUT') {
